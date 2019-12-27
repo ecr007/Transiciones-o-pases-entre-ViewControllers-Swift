@@ -77,3 +77,30 @@ self.window = UIWindow(frame: UIScreen.main.bounds)
 self.window?.rootViewController = initialViewControlleripad
 self.window?.makeKeyAndVisible()
 ```
+
+## Ejemplo de la clase destino
+
+```swift
+class DestinationViewController: UIViewController {
+	
+	
+	@IBOutlet weak var name: UILabel!
+	
+	var dataLlegada:String?
+	
+    override func viewDidLoad() {
+        super.viewDidLoad()
+		
+		if let txt = dataLlegada{
+			name.text = txt
+		}
+
+        // Do any additional setup after loading the view.
+    }
+	
+	@IBAction func goBack(_ sender: UIButton) {
+		dismiss(animated: true, completion: nil)
+	}
+	
+}
+```
