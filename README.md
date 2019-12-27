@@ -34,7 +34,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
 ## Uso por programación
 
-```
+```swift
 1 - Inicializamos la clase UIStoryBoard
 
 let objUIStoryBoard = UIStoryBoard(name: "Nombre del storyBoard por lo regular es Main", bundle: Bundle.main)
@@ -68,7 +68,7 @@ present(destinoControllerView,animated:true,completion:nil)
 
 ## Para remplazar toda la pantalla y 'eliminar la anterior'
 
-```
+```swift
 let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
 let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "initLogin") as UIViewController
