@@ -31,3 +31,49 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
 }
 ```
+
+## Uso por programación
+
+```
+1 - Inicializamos la clase UIStoryBoard
+
+let objUIStoryBoard = UIStoryBoard(name: "Nombre del storyBoard por lo regular es Main", bundle: Bundle.main)
+
+2 - Inicializamos el controlador donde nos dirigimos
+
+guard let destinoControllerView = objUIStoryBoard.instantiateViewController(withIdentifier: StoryBoardID del destino) as? DestinoControllerView else{
+	print("No se encontro el ID")
+	return
+}
+
+// Para pasar información al destinoControllerView simplemente usamos el objeto del destino
+
+destinoControllerView.variableQueSeEncuentraEnDestino = "Alguna Info o objeto"
+
+// OJO si estamos en un NavigationView usamos la variable navigationController que es global en estos casos, en caso contrario arroja nil
+
+navigationController?.pushViewController(destinoControllerView, animated: true)
+
+// SI NO USAMOS NavigationController usamos un present
+
+// Puedo cambiar el modo en que se muestra el modal
+destinoControllerView.modalTransitionStyle = .crossDissolve
+
+// Puedo cambiar si se muestra en pantalla completa o de otra manera
+destinoControllerView.modalPresentationStyle = .fullscreen
+
+// Run Transition
+present(destinoControllerView,animated:true,completion:nil)
+```
+
+## Para remplazar toda la pantalla y 'eliminar la anterior'
+
+```
+let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
+let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "initLogin") as UIViewController
+
+self.window = UIWindow(frame: UIScreen.main.bounds)
+self.window?.rootViewController = initialViewControlleripad
+self.window?.makeKeyAndVisible()
+```
