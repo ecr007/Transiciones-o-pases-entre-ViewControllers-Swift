@@ -35,11 +35,11 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 ## Uso por programación
 
 ```swift
-1 - Inicializamos la clase UIStoryBoard
+// 1 - Inicializamos la clase UIStoryBoard
 
 let objUIStoryBoard = UIStoryBoard(name: "Nombre del storyBoard por lo regular es Main", bundle: Bundle.main)
 
-2 - Inicializamos el controlador donde nos dirigimos
+// 2 - Inicializamos el controlador donde nos dirigimos
 
 guard let destinoControllerView = objUIStoryBoard.instantiateViewController(withIdentifier: StoryBoardID del destino) as? DestinoControllerView else{
 	print("No se encontro el ID")
