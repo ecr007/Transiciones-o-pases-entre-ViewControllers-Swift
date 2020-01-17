@@ -66,6 +66,14 @@ destinoControllerView.modalPresentationStyle = .fullscreen
 present(destinoControllerView,animated:true,completion:nil)
 ```
 
+## Uso programación 2
+
+```swift
+let rootController = self.storyboard!.instantiateViewController(withIdentifier: "initLogin")
+rootController.modalPresentationStyle = .fullScreen
+return self.present(rootController, animated:true, completion: nil
+```			
+
 ## Para remplazar toda la pantalla y 'eliminar la anterior'
 
 ```swift
